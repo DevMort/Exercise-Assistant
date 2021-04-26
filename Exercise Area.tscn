@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Exercise Area.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/overpass-regular.otf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 0.333333, 0.333333, 1 )
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="DynamicFont" id=3]
+size = 22
+font_data = ExtResource( 2 )
+
+[node name="Exercise Area" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="RichTextLabel" parent="CenterContainer"]
+margin_left = 50.0
+margin_top = 325.0
+margin_right = 400.0
+margin_bottom = 675.0
+rect_min_size = Vector2( 350, 350 )
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.972549, 0.972549, 0.94902, 1 )
+bbcode_enabled = true
+bbcode_text = "[shake rate=10 level=6] [center] Exercise [/center] [/shake]"
+text = "  Exercise  "
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+margin_top = 904.0
+margin_right = 450.0
+margin_bottom = 1000.0
+custom_constants/margin_bottom = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer3"]
+margin_right = 450.0
+margin_bottom = 64.0
+
+[node name="next" type="Button" parent="MarginContainer3/CenterContainer"]
+margin_left = 161.0
+margin_right = 289.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 128, 64 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.972549, 0.972549, 0.94902, 1 )
+custom_colors/font_color_hover = Color( 0.972549, 0.972549, 0.94902, 1 )
+custom_colors/font_color_pressed = Color( 0.972549, 0.972549, 0.94902, 1 )
+text = "Next"

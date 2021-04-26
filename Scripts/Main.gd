@@ -10,12 +10,12 @@ onready var start_button = $VBoxContainer/MarginContainer3/CenterContainer/start
 
 var ex_count : int = 0
 var re_count : int = 0
-var exercises : Dictionary = {}
-var rests : Dictionary = {}
+var set : Dictionary = {}
 
 func _ready():
 	add_exercise_button.connect("pressed", self, "add_exercise")
 	add_rest_button.connect("pressed", self, "add_rest")
+	start_button.connect("pressed", self, "start")
 
 func add_exercise() -> void:
 	var e = exercise_scene.instance()
@@ -28,3 +28,11 @@ func add_rest() -> void:
 	grid.add_child(r)
 	re_count += 1
 	r.button.text = String(re_count)
+
+func _process(delta):
+	print(set)
+
+func start() -> void:
+	if ex_count != 0:
+		Global.set = set
+		get_tree().change_scene("res://Exercise Area.tscn")

@@ -17,7 +17,9 @@ func _ready():
 func modify_exercise() -> void: panel.get_parent().show()
 
 func confirm() -> void:
-	minutes = minutes_input.text
-	seconds = seconds_input.text
+	var x = get_tree().get_nodes_in_group("main")
+	# the last part of the array is a boolean that's true if it's a rest
+	var y = [x[0].ex_count+x[0].re_count, self, int(minutes_input.text), int(seconds_input.text), 1]
+	x[0].set[String(name)] = y
 	 
 	panel.get_parent().hide()
