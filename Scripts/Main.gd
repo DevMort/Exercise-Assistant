@@ -67,11 +67,18 @@ func load_sets() -> void:
 					var r = rest_scene.instance()
 					grid.add_child(r)
 					
-					
+					re_count += 1
+					r.minutes_input.text = String(set[i][1])
+					r.seconds_input.text = String(set[i][2])
+					r.button.text = String(re_count)
 				else:
 					var e = exercise_scene.instance()
 					grid.add_child(e)
 					
-					
+					ex_count += 1
+					e.name_input.text = set[i][1]
+					e.notes_input.text = set[i][2]
+					e.button.text = String(ex_count)
 	
+	Global.set = set
 	f.close()
