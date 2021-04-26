@@ -23,7 +23,12 @@ func next() -> void:
 	#  == ==  == ==
 	
 	# See what goes first
-	i += 1
+	if i < Global.set.size():
+		i += 1
+	else:
+		i = -1
+		text.bbcode_text = "[shake rate=10 level=6] [center]Congratulations![/center] [/shake]"
+		next_button.disabled = true
 	
 	for k in Global.set:
 		if Global.set[k][0] == i:
