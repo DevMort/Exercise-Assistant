@@ -58,29 +58,20 @@ func load_sets() -> void:
 	var data = parse_json(f.get_as_text())
 	set = data
 	
-	while p != data.size():
+	while p != set.size():
 		p += 1
-		for k in data:
-			if data[k][0] == p:
-				if not data[k][data[k].size() - 1]:
-					var e = exercise_scene.instance()
-					ex_count += 1
-					grid.add_child(e)
-					
-					e.button.text = String(ex_count)
-					e.name_input.text = data[k][1]
-					e.notes_input.text = data[k][2]
-					
-					set[String(e.name)][0] = p
-				else:
+		
+		for i in set:
+			if set[i][0] == p:
+				if set[i][set[i].size() - 1]:
 					var r = rest_scene.instance()
-					re_count += 1
 					grid.add_child(r)
 					
-					r.button.text = String(re_count)
-					r.minutes_input.text = String(data[k][1])
-					r.seconds_input.text = String(data[k][2])
 					
-					set[String(r.name)][0] = p
-		
+				else:
+					var e = exercise_scene.instance()
+					grid.add_child(e)
+					
+					
+	
 	f.close()

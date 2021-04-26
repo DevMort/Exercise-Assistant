@@ -3,7 +3,6 @@ extends Control
 onready var text = $CenterContainer/text
 onready var next_button = $MarginContainer3/CenterContainer/next
 onready var timer = $Timer
-onready var back_button = $MarginContainer4/CenterContainer/back
 
 # is the current thingy an exercise or rest?
 var er : bool = false 
