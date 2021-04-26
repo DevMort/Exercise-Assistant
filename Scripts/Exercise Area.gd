@@ -5,6 +5,7 @@ onready var next_button = $MarginContainer3/CenterContainer/next
 
 # is the current thingy an exercise or rest?
 var er : bool = false 
+var i : int = 0 # tracks the order of the sets
 
 func _ready() -> void: 
 	next_button.connect("pressed", self, "next")
@@ -17,17 +18,11 @@ func next() -> void:
 	#  == ==  == ==
 	
 	# See what goes first
-	var sets_done = [] # integers are put here; the indeces of them
-	var i : int = 1
-	for p in Global.set: # skim through the top level of the Dictionary
-		if i > Global.set[p][0] and !sets_done.has(Global.set[p][0]):
-				i = Global.set[p][0]
-				sets_done.append(i)
-	## == By this point, the next set is now pinpointed ==
+	i += 1
 	
 	for k in Global.set:
 		if Global.set[k][0] == i:
 			if Global.set[k][Global.set[k].size() - 1]:
-				print("The first set is a rest.")
+				print("It's a rest.")
 			else:
-				print("The first set is: " + Global.set[k][1])
+				text.bbcode_text = "[shake rate=10 level=6] [center]" + String(Global.set[k][1]) + "[/center] [/shake]"
