@@ -13,6 +13,8 @@ var re_count : int = 0
 var set : Dictionary = {}
 
 func _ready():
+	load_sets()
+	
 	add_exercise_button.connect("pressed", self, "add_exercise")
 	add_rest_button.connect("pressed", self, "add_rest")
 	start_button.connect("pressed", self, "start")
@@ -32,4 +34,26 @@ func add_rest() -> void:
 func start() -> void:
 	if ex_count != 0:
 		Global.set = set
+		
+		save()
+		
 		get_tree().change_scene("res://Exercise Area.tscn")
+
+func save() -> void:
+	var f = File.new()
+	f.open("user://sets.emp", File.WRITE)
+	
+	f.store_string(to_json(set))
+	
+	f.close()
+
+func load_sets() -> void:
+	var f = File.new()
+	if not f.file_exists("user://sets.emp"):
+		return
+	f.open("user://sets.emp", File.READ)
+	
+	var data = parse_json(f.get_as_text())
+	print(data)
+	
+	f.close()
