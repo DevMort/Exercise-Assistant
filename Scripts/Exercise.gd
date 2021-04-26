@@ -20,7 +20,13 @@ func modify_exercise() -> void:
 	panel.get_parent().show()
 
 func remove() -> void:
-	pass
+	var x = get_tree().get_nodes_in_group("main")
+	x[0].set.erase(String(name))
+	Global.set = x[0].set
+	x[0].ex_count -= 1
+	x[0].save()
+	
+	queue_free()
 
 func confirm() -> void:
 	var x = get_tree().get_nodes_in_group("main")
