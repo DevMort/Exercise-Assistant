@@ -6,20 +6,18 @@ onready var confirm = $CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxCon
 onready var name_input = $CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/name_input
 onready var notes_input = $CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/notes_input
 
-var exercise_name : String = ""
-var notes : String = ""
-
 func _ready(): 
 	button.connect("pressed", self, "modify_exercise")
 	confirm.connect("pressed", self, "confirm")
 	panel.get_parent().hide()
 
-func modify_exercise() -> void: 
-	button.disabled = true
-	panel.get_parent().show()
+func modify_exercise() -> void: panel.get_parent().show()
+
 func confirm() -> void:
-	exercise_name = name_input.text
-	notes = notes_input.text
+	var x = get_tree().get_nodes_in_group("main")
+	var y = [x[0].ex_count, self, name_input.text, notes_input.text]
+	x[0].exercises[String(name)] = y
+	
+	print(x[0].exercises)
 	 
 	panel.get_parent().hide()
-	button.disabled = false

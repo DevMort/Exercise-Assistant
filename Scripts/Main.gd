@@ -10,6 +10,8 @@ onready var start_button = $VBoxContainer/MarginContainer3/CenterContainer/start
 
 var ex_count : int = 0
 var re_count : int = 0
+var exercises : Dictionary = {}
+var rests : Dictionary = {}
 
 func _ready():
 	add_exercise_button.connect("pressed", self, "add_exercise")

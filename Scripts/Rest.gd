@@ -14,12 +14,10 @@ func _ready():
 	confirm.connect("pressed", self, "confirm")
 	panel.get_parent().hide()
 
-func modify_exercise() -> void: 
-	button.disabled = true
-	panel.get_parent().show()
+func modify_exercise() -> void: panel.get_parent().show()
+
 func confirm() -> void:
 	minutes = minutes_input.text
 	seconds = seconds_input.text
 	 
 	panel.get_parent().hide()
-	button.disabled = false
