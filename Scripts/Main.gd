@@ -29,9 +29,6 @@ func add_rest() -> void:
 	re_count += 1
 	r.button.text = String(re_count)
 
-func _process(delta):
-	print(set)
-
 func start() -> void:
 	if ex_count != 0:
 		Global.set = set
