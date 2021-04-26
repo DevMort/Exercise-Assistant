@@ -15,6 +15,7 @@ var p : int = 0 # for tracking the indeces when loading at startup
 
 func _ready():
 	load_sets()
+	Global.set = {}
 	
 	add_exercise_button.connect("pressed", self, "add_exercise")
 	add_rest_button.connect("pressed", self, "add_rest")
