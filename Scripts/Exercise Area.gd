@@ -15,7 +15,6 @@ var total_in_sec : int = 0
 func _ready() -> void: 
 	next_button.connect("pressed", self, "next")
 	timer.connect("timeout", self, "tick")
-	back_button.connect("pressed", self, "back")
 	next()
 
 func next() -> void: 
@@ -51,5 +50,3 @@ func tick() -> void:
 		text.bbcode_text = "[shake rate=10 level=6] [center]Ready to proceed?[/center] [/shake]"
 		timer.stop()
 		next_button.disabled = false
-
-func back() -> void: get_tree().change_scene("res://Main.tscn")

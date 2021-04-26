@@ -81,6 +81,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -0.890884
 margin_bottom = -0.890869
+mouse_filter = 2
 custom_constants/margin_right = 64
 custom_constants/margin_top = 64
 custom_constants/margin_left = 64
@@ -94,11 +95,13 @@ margin_left = 64.0
 margin_top = 64.0
 margin_right = 386.0
 margin_bottom = 250.0
+mouse_filter = 2
 color = Color( 1, 0.721569, 0.423529, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 custom_constants/margin_right = 12
 custom_constants/margin_top = 50
 custom_constants/margin_left = 12
@@ -181,3 +184,36 @@ custom_colors/font_color = Color( 0.313726, 0.980392, 0.482353, 1 )
 custom_colors/font_color_hover = Color( 0.972549, 0.972549, 0.94902, 1 )
 custom_colors/font_color_pressed = Color( 0.313726, 0.980392, 0.482353, 1 )
 text = "Confirm"
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer"]
+margin_left = 76.0
+margin_top = 113.109
+margin_right = 374.0
+margin_bottom = 239.109
+mouse_filter = 2
+custom_constants/margin_top = 110
+custom_constants/margin_left = 235
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/MarginContainer2"]
+margin_left = 235.0
+margin_top = 110.0
+margin_right = 298.0
+margin_bottom = 126.0
+mouse_filter = 2
+
+[node name="remove" type="Button" parent="CanvasLayer/MarginContainer2/CenterContainer"]
+margin_left = 4.0
+margin_right = 59.0
+margin_bottom = 16.0
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 0.333333, 0.333333, 1 )
+custom_colors/font_color_hover = Color( 0.972549, 0.972549, 0.94902, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.333333, 0.333333, 1 )
+text = "remove"

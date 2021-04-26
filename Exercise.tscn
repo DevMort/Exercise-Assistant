@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Exercise.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/overpass-regular.otf" type="DynamicFontData" id=2]
@@ -45,6 +45,13 @@ corner_radius_bottom_left = 4
 [sub_resource type="StyleBoxEmpty" id=7]
 
 [sub_resource type="DynamicFont" id=8]
+outline_size = 2
+outline_color = Color( 0.266667, 0.278431, 0.352941, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="DynamicFont" id=10]
 outline_size = 2
 outline_color = Color( 0.266667, 0.278431, 0.352941, 1 )
 font_data = ExtResource( 2 )
@@ -99,6 +106,7 @@ color = Color( 1, 0.721569, 0.423529, 1 )
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 custom_constants/margin_right = 12
 custom_constants/margin_top = 12
 custom_constants/margin_left = 12
@@ -180,3 +188,36 @@ custom_colors/font_color = Color( 0.313726, 0.980392, 0.482353, 1 )
 custom_colors/font_color_hover = Color( 0.972549, 0.972549, 0.94902, 1 )
 custom_colors/font_color_pressed = Color( 0.313726, 0.980392, 0.482353, 1 )
 text = "Confirm"
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer"]
+margin_left = 76.0
+margin_top = 75.1091
+margin_right = 374.0
+margin_bottom = 241.109
+mouse_filter = 2
+custom_constants/margin_top = 150
+custom_constants/margin_left = 235
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/MarginContainer2"]
+margin_left = 235.0
+margin_top = 150.0
+margin_right = 298.0
+margin_bottom = 166.0
+mouse_filter = 2
+
+[node name="remove" type="Button" parent="CanvasLayer/MarginContainer2/CenterContainer"]
+margin_left = 4.0
+margin_right = 59.0
+margin_bottom = 16.0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 0.333333, 0.333333, 1 )
+custom_colors/font_color_hover = Color( 0.972549, 0.972549, 0.94902, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.333333, 0.333333, 1 )
+text = "remove"
