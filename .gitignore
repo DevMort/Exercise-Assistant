@@ -1,3 +1,6 @@
 Exercise Assistant.x86_64
 export_presets.cfg
 .import/.gdignore
+icon bg.png.import
+icon fg.png.import
+icon.png.import
